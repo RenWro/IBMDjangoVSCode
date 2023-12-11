@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Pesquisar Livros</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            color: black;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        input[type="text"] {
+            margin-bottom: 10px;
+            padding: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        input[type="submit"],
+        button {
+            display: inline-block;
+            padding: 8px 16px;
+            margin: 0 5px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            background-color: #2F2F2f;
+            color: white;
+            text-align: center;
+        }
+
+        input[type="submit"]:hover,
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .link-button {
+            display: inline-block;
+            padding: 8px 16px;
+            margin: 0 5px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            background-color: #2F2F2f;
+            color: white;
+            text-align: center;
+        }
+
+        .link-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://www.gatosemrabo.com.br/wp-content/themes/twentytwenty-child/images/logo-escrito.svg" alt="Logo Gato Sem Rabo">
+    <p></p>
+    <h1>Pesquisar Livros</h1>
+    <div class="btn-container">
+        <form action="{% url 'buscar_livros' %}" method="get">
+            <label for="termoBusca">Digite o termo de busca:</label>
+            <input type="text" id="termoBusca" name="q">
+            <input type="submit" value="Buscar">
+        </form>
+    </div>
+        <form action="{% url 'index' %}">
+            <button class="link-button" type="submit">Voltar para Home</button>
+        </form>
+</body>
+</html>
